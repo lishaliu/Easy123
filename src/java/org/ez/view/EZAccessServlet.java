@@ -245,7 +245,8 @@ public class EZAccessServlet extends JsonServlet {
                     try {
                         session.beginTransaction();
                         List<Lang> lang=null;
-                        lang =session.createSQLQuery("select htmlId, "+user.getLang()+" from Lang").list();
+                       //lang =session.createSQLQuery("select htmlId, English from Lang").list();
+                       lang =session.createSQLQuery("select htmlId, "+user.getLang()+" from Lang").list();
                         output.put("lang",lang);
                         session.getTransaction().commit();
                     }
